@@ -1,0 +1,38 @@
+{
+  "name": "printwatch-api-nodejs",
+  "version": "1.0.0",
+  "description": "Projeto com intuito de monitorar impressões baseado em cliente usando PrintLogger da PaperCut.",
+  "main": "server.js",
+  "scripts": {
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && nodemon server.js -ext js,json,env,proto,prisma"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/ronnybrendo/PrintWatch-api-nodejs.git"
+  },
+  "keywords": [
+    "PrintLogger"
+  ],
+  "author": "Ronnybrendo",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/ronnybrendo/PrintWatch-api-nodejs/issues"
+  },
+  "homepage": "https://github.com/ronnybrendo/PrintWatch-api-nodejs#readme",
+  "dependencies": {
+    "@prisma/client": "^6.10.1",
+    "axios": "^1.9.0",
+    "bcrypt": "^5.1.1",
+    "crypto": "^1.0.1",
+    "cors": "^2.8.5",
+    "dotenv": "^16.5.0",
+    "express": "^5.1.0",
+    "json-bigint-patch": "^0.0.8",
+    "nodemon": "^3.1.10",
+    "prisma-client": "^0.0.0",
+    "short-unique-id": "^5.3.2"
+  },
+  "devDependencies": {
+    "prisma": "^6.10.1"
+  }
+}
