@@ -4,7 +4,11 @@
   "description": "Projeto com intuito de monitorar impressões baseado em cliente usando PrintLogger da PaperCut.",
   "main": "server.js",
   "scripts": {
-    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && nodemon server.js -ext js,json,env,proto,prisma"
+    "dev": "set NODE_OPTIONS=--openssl-legacy-provider && nodemon server.js -ext js,json,env,proto,prisma",
+    "start": "node server.js"
+  },
+  "engines": {
+    "node": ">=18"
   },
   "repository": {
     "type": "git",
