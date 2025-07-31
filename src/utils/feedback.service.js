@@ -7,6 +7,9 @@ const FEEDBACK = {
     VALIDATED: {
         http: httpStatusService.OK
     },
+    SUCCESS: {
+        http: httpStatusService.OK
+    },
     CREATED: {
         http: httpStatusService.CREATED
     },

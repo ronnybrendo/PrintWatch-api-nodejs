@@ -1,6 +1,4 @@
-const axios = require('axios');
 const { db, parseError } = require('../../utils/db.service');
-const { verify } = require('crypto');
 require('dotenv').config();
 
 module.exports = {
