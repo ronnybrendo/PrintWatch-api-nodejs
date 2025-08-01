@@ -7,10 +7,9 @@ module.exports = {
 
         try {
             const printers = await db.central.findMany({
+                distinct: ['impressora'],
                 select: { impressora: true}
             });
-
-            console.log(`Total de impressoras encontradas: ${total}`);
             
             if (!printers || printers.length === 0) {
                 return { error: 'No printers found' };
