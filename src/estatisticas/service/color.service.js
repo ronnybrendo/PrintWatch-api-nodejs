@@ -3,12 +3,26 @@ require('dotenv').config();
 
 module.exports = {
     async getMostUsedColors () {
+
+                    const impressorasIgnoradas = [
+                'Microsoft Print to PDF',
+                'Microsoft XPS Document Writer',
+                'PDFCreator',
+                'Adobe PDF',
+                'ZDesigner ZD220-203dpi ZPL',
+                'Sybase DataWindow PS',
+                'MP-4200 TH',
+                'PDF Architect 9',
+                'Doro PDF Writer'
+                // Adicione outras impressoras que devem ser ignoradas aqui
+            ];
+            
         try {
             const colors = await db.central.groupBy({
                 by: ['cor'],
                 where: {
                     impressora: {
-                        not: 'Microsoft Print to PDF'
+                        notIn: impressorasIgnoradas
                     }
                 },
                 _count: true ,
@@ -27,9 +41,28 @@ module.exports = {
         }
     },
     async getMostUsedColorsBySector () {  
+
+                    const impressorasIgnoradas = [
+                'Microsoft Print to PDF',
+                'Microsoft XPS Document Writer',
+                'PDFCreator',
+                'Adobe PDF',
+                'ZDesigner ZD220-203dpi ZPL',
+                'Sybase DataWindow PS',
+                'MP-4200 TH',
+                'PDF Architect 9',
+                'Doro PDF Writer'
+                // Adicione outras impressoras que devem ser ignoradas aqui
+            ];
+
         try {
             const colors = await db.central.groupBy({
                 by: ['setor', 'cor'],
+                where: {
+                    impressora: {
+                        notIn: impressorasIgnoradas
+                    }
+                },
                 _count: true,
             });
 
@@ -44,12 +77,26 @@ module.exports = {
         }
     },
     async getMustUsedColorsByUser () {
+
+            const impressorasIgnoradas = [
+                'Microsoft Print to PDF',
+                'Microsoft XPS Document Writer',
+                'PDFCreator',
+                'Adobe PDF',
+                'ZDesigner ZD220-203dpi ZPL',
+                'Sybase DataWindow PS',
+                'MP-4200 TH',
+                'PDF Architect 9',
+                'Doro PDF Writer'
+                // Adicione outras impressoras que devem ser ignoradas aqui
+            ];
+
         try {
             const colors = await db.central.groupBy({
                 by: ['usuario', 'cor'],
                 where: {
                     impressora: {
-                        not: 'Microsoft Print to PDF'
+                        notIn: impressorasIgnoradas
                     }
                 },
                 _count: true,

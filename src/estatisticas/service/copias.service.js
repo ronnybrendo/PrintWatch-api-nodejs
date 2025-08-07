@@ -4,10 +4,24 @@ require('dotenv').config();
 module.exports = {
     async getAllValueOfPages () {
         try {
+            // Lista de impressoras a serem ignoradas
+            const impressorasIgnoradas = [
+                'Microsoft Print to PDF',
+                'Microsoft XPS Document Writer',
+                'PDFCreator',
+                'Adobe PDF',
+                'ZDesigner ZD220-203dpi ZPL',
+                'Sybase DataWindow PS',
+                'MP-4200 TH',
+                'PDF Architect 9',
+                'Doro PDF Writer'
+                // Adicione outras impressoras que devem ser ignoradas aqui
+            ];
+
             const registros = await db.central.findMany({
                 where: {
                     impressora: {
-                        not: 'Microsoft Print to PDF'
+                        notIn: impressorasIgnoradas
                     }
                 },
                 select: {
