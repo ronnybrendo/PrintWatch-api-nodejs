@@ -216,9 +216,10 @@ PrintWatch-api-nodejs/
 
 ## 🔌 Endpoints
 
-### Central (Recebimento de Dados)
+### CENTRAL
+**Arquivo:** `./src/central/router/impressao.router.js`
 
-#### POST `/central/receptprintreq`
+#### 1. POST `/central/receptprintreq`
 Recebe dados de impressão do cliente Windows.
 
 **Payload:**
@@ -243,7 +244,7 @@ Recebe dados de impressão do cliente Windows.
 }
 ```
 
-#### POST `/central/verifyimpression`
+#### 2. POST `/central/verifyimpression`
 Verifica se uma impressão já existe no sistema.
 
 **Resposta:**
@@ -253,23 +254,32 @@ Verifica se uma impressão já existe no sistema.
 }
 ```
 
-### Estatísticas
+### ESTATISTICAS
+**Arquivo:** `./src/estatisticas/router/estatisticas.router.js`
 
-#### GET `/estatisticas/copias`
-Retorna estatísticas de cópias por período.
+#### 3. GET `/cores/coresmaisusadas`
+Retorna estatísticas das cores mais utilizadas.
 
-#### GET `/estatisticas/color`
-Retorna estatísticas de uso de cores.
+#### 4. GET `/cores/coresmaisusadasporsetor`
+Retorna estatísticas das cores mais utilizadas por setor.
 
-### Impressoras
+#### 5. GET `/cores/coresmaisusadasporusuario`
+Retorna estatísticas das cores mais utilizadas por usuário.
 
-#### GET `/impressoras`
-Lista todas as impressoras registradas.
+#### 6. GET `/copias/valorespaginasimpressas`
+Retorna estatísticas de valores e páginas impressas.
 
-### Setores
+### IMPRESSORAS
+**Arquivo:** `./src/impressoras/router/impressoras.router.js`
 
-#### GET `/setores`
-Lista todos os setores registrados.
+#### 7. GET `/impressoras/listarimpressoras`
+Lista todas as impressoras registradas no sistema.
+
+### SETORES
+**Arquivo:** `./src/setores/router/setor.router.js`
+
+#### 8. GET `/setores/listarsetores`
+Lista todos os setores registrados no sistema.
 
 ## 🔍 Troubleshooting
 
